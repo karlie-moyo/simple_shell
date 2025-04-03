@@ -1,6 +1,6 @@
 # Simple Shell
+![image](https://github.com/user-attachments/assets/bf920b86-43b3-4235-b490-bb6b389bfe10)
 
-![image](https://github.com/user-attachments/assets/c462891d-2ef3-4c0d-a209-edf16aeb7cc1)
 
 
 
