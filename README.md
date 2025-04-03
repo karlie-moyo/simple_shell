@@ -1,6 +1,7 @@
 # Simple Shell
 
-![image](https://github.com/user-attachments/assets/aa121bdc-6a88-449e-a3d8-a15a9005d44d)
+![image](https://github.com/user-attachments/assets/c462891d-2ef3-4c0d-a209-edf16aeb7cc1)
+
 
 
     This is a collaboration project on Shell. We were tasked to create a simple shell that mimics the Bash shell. Our shell shall be called hsh
