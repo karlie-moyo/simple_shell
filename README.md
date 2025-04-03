@@ -2,7 +2,38 @@
 
 ![image](https://github.com/user-attachments/assets/ea8acbe9-f025-4f05-a7fc-67d5f456660e)
 
-
+| PR.NO | PROJECT                                                                           | DESCRIPTION |
+| ----- | --------------------------------------------------------------------------------- | ----------- |
+|  0  | [Authors ](./AUTHORS/)                                                              | Karlie Moyo and Franklyn Tekenatei |
+| 1   | [Builtins](./builtins.c/)                                                             | The code defines two functions for handling built-in shell commands: `builtins` checks and executes built-ins, and `check_builtin` verifies if a command matches a predefined list of built-ins like `exit` and `env`.   |
+| 2  | [Builtins Header](./builtins.h/)                                                         | This header file declares functions for handling built-in shell commands, including builtins, check_builtin, bin_exit, bin_env, and bin_echo, along with helper functions for argument processing and printing.          |
+| 3  | [Commands](./commands.c/)                                                                     | The analyze function processes command arguments by first checking if the command is a built-in, then verifying if the command has proper permissions or exists as a file, and finally attempting to execute it or locate it in the system's path, handling errors appropriately if the command cannot be found or executed. |
+| 4  | [Commands Header](./commands.h/)                                                                 | This header file defines functions for handling commands in a shell program, including analyzing and executing commands, checking file permissions, working with environment variables, and managing the execution of built-in commands. It also includes the necessary headers for system-level functions like file handling and process management.           |
+| 5  | [Env](./env.c/)                                                                  | The bin_env function is an implementation of the env built-in command in a shell program. It retrieves and displays the environment variables by calling the get_full_env() function, although it currently does not make use of the info and arguments parameters.    |
+| 6  | [Environment](./environment.c/)                                                        | The code provides functions for retrieving environment variables, locating executable files in the system's PATH, checking if a path refers to the current directory, and printing all environment variables in the shell.    |
+| 7 | [Error](./error.c/)                                                                | The code defines functions for handling and printing error messages based on specific error codes. It selects the appropriate error message, formats it with additional information like command numbers, and prints it, optionally including extra details when necessary. |
+| 8 | [Error Header](./error.h/)                                                              | This header file defines the interface for error handling functions in a shell program. It includes functions for selecting error messages based on error codes (message_selector), printing general error messages (error), and printing errors with additional information (error_extra).  |
+| 9 |  [Execute](./execute.c/)                                                                       | The file handles command execution in a separate process, managing errors, checking for executable permissions, and handling current directory commands within a shell environment. |
+| 10 | [Exit](./exit.c/)                                                            |The file implements the exit builtin, which frees memory and exits the shell with the last status code, while also handling the validation of the exit argument. |
+| 11 | [Free](./free.c/)                                                           |  This file defines two functions: free_memory_p to free a single pointer and free_memory_pp to free a double pointer by iterating through each element and freeing the memory.       |
+| 12 | [General Header](./general.h/)                                        | This file defines macros, constants, and structures used for managing shell operations. It includes flags for interactive/non-interactive modes, error codes, and status codes, along with the general_t structure which holds various details about the shell session (e.g., arguments, command paths, error codes). Additionally, it defines structures for error handling (error_t) and built-in commands (builtin_t).    |
+| 13| [Main](./main.c/)                                                                        | The main function is the entry point of the shell program. It initializes a general_t structure to store the shell's state, such as arguments and process ID. It checks if the shell is running in interactive mode by using isatty(STDIN). The start function is then called to begin executing commands. Afterward, the status code is returned, and the memory allocated for info is freed before the program exits.  |
+| 14 |  [Main Header](./main.h/)                                                                    | The main.h header file defines the entry point of the shell program. It includes necessary libraries like stdio.h, stdlib.h, and unistd.h, and it declares the start function, which takes a general_t *info parameter. This function is responsible for initiating the shell's execution, and the file also includes the general.h header for the general_t structure. |
+| 15 | [Man 1 Simple Shell](./man_1_simple_shell/)                                            | K-shell is a simple command-line interpreter for UoS School students, supporting interactive and non-interactive modes. It executes commands, handles basic environment variables, and provides error handling and signal management.|
+| 16 | [Memory](./memory.c/)                                                            | The _realloc function reallocates memory by resizing an existing block. It handles four cases: if the new size equals the old size, if the pointer is NULL, if the new size is zero, or if it needs to copy data to a newly allocated memory block. It ensures efficient memory management by copying the data from the old block to the new one before freeing the old block. |
+| 17 | [Memory Header](./memory.h/)                                                            | The memory.h file declares functions for memory management: _realloc for reallocating memory, free_memory_p to free a single pointer, and free_memory_pp to free a double pointer. |
+| 18 | [Patterns](./patterns.c/)                                                              | The code processes and replaces patterns in strings by detecting $ symbols and replacing them with corresponding values. It includes functions to iterate through arguments, handle patterns, and reallocate memory to store the modified strings. |
+| 19 | [Patterns Replacer](./patterns_replacer.c/)                                                   | The code provides functions for replacing special symbols in strings: replacement replaces $ and ? with the process ID and status code, respectively, and replace_env retrieves the value of an environment variable if it exists. |
+| 20 | [Permissions](./permissions.c/)                                                               | The code defines two functions: is_executable checks if a file has execute permissions, and is_file verifies if a file exists and is executable. |
+| 21 | [Printers](./printers.c/)                                                             |  This code defines two functions: _putchar_to_fd to print a single character to a specified file descriptor, and print_to_fd to print a string to a file descriptor, both returning the number of bytes printed or -1 on error.  |
+| 22 | [Printers Err](./printers_err.c/)                                                        | The function print_err prints a message to standard error (STDERR) and returns the number of bytes printed. It utilizes the print_to_fd function for the actual printing. |
+| 23 | [Printers Out](./printers_out.c/)                                                    | This code defines two functions: _putchar to print a character to STDOUT, and print to print a string to STDOUT, returning the number of bytes printed or -1 on error. |
+| 24 | [Start](./start.c/)                                                        | The start function handles the shell mode (INTERACTIVE or NON_INTERACTIVE) and calls start_prompt to initiate the shell prompt.|
+| 25 | [Test](./text.c/)                                                            | The code handles the shell prompt, reads user input, processes commands, and manages signal handling (e.g., SIGINT) to maintain interactive shell behavior.|
+| 26 | [Test Header](./text.h/)                                                        | The header file defines functions and utility functions for managing shell prompts, handling strings, tokenizing input, printing output and errors, and replacing patterns like environment variables in a shell context. |
+| 27 | [Tokenization](./tokenization.c/)                                                | The code contains two functions: split_words splits a string into words based on delimiters, while join_words concatenates three words with a separator and adds a newline. |
+| 28 | [Utils Text](./utils_text.c/)                                                        | This code provides functions to manipulate strings: _strlen returns the length of a string, _strcat concatenates two strings, _strcpy copies one string to another, _strdup duplicates a string, and _strcmp compares two strings.|
+| 29 | [Utils Text2](./utils_text2.c/)                                                            | This code provides utility functions for handling numbers and strings: digits counts the number of digits in a number, to_string converts an integer to a string, is_numerical checks if a character is a digit, _atoi converts a string to an integer, and contains_letter checks if a string contains any non-digit characters.|
 
     This is a collaboration project on Shell. We were tasked to create a simple shell that mimics the Bash shell. Our shell shall be called hsh
 
@@ -304,7 +335,27 @@ What we learned:
     Handling dynamic memory allocation in a large program
     Pair programming and team work
     Building a test suite to check our own code
+    ### AUTHOR:
+<details>
+    <summary>Authors</summary>
+    <ul>
+        <li>
+            <a href="https://github.com/karlie-moyo">Github</a>
+        </li>
+        <li>
+            <a href="https://twitter.com/karlieemoyo">Twitter</a>
+        </li>
+        <li>
+            <a href="https://karlieemoyo@gmail.com">e-mail</a>
+        </li>
+        <li>
+            <a href="https://frankiperezi99@gmail.com">e-mail</a>
+        </li>
+    </ul>
+</details>
 
-Authors 
-Karlie Moyo <karlieemoyo@gmail.com>
-Tekenatei Franklyn <frankiperezi99@gmail.com>
+---
+
+### Acknowledgements  :pray:
+___
+All of the work in this project was conducted as part of the UoS-SE program's curriculum.
