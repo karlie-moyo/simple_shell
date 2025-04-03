@@ -4,7 +4,7 @@
 
 | PR.NO | PROJECT                                                                           | DESCRIPTION |
 | ----- | --------------------------------------------------------------------------------- | ----------- |
-|  0  | [Authors ](./AUTHORS/)                                                              | Karlie Moyo and Franklyn Tekenatei |
+|  0  | [Authors ](./AUTHORS/)                                                              | Karlie Moyo and Tekenatei Franklyn |
 | 1   | [Builtins](./builtins.c/)                                                             | The code defines two functions for handling built-in shell commands: `builtins` checks and executes built-ins, and `check_builtin` verifies if a command matches a predefined list of built-ins like `exit` and `env`.   |
 | 2  | [Builtins Header](./builtins.h/)                                                         | This header file declares functions for handling built-in shell commands, including builtins, check_builtin, bin_exit, bin_env, and bin_echo, along with helper functions for argument processing and printing.          |
 | 3  | [Commands](./commands.c/)                                                                     | The analyze function processes command arguments by first checking if the command is a built-in, then verifying if the command has proper permissions or exists as a file, and finally attempting to execute it or locate it in the system's path, handling errors appropriately if the command cannot be found or executed. |
