@@ -1,6 +1,9 @@
+# Simple Shell
+
+![image](https://github.com/user-attachments/assets/aa121bdc-6a88-449e-a3d8-a15a9005d44d)
 
 
-    This is an ALX collaboration project on Shell. We were tasked to create a simple shell that mimics the Bash shell. Our shell shall be called hsh
+    This is a collaboration project on Shell. We were tasked to create a simple shell that mimics the Bash shell. Our shell shall be called hsh
 
 Project was completed using
 
